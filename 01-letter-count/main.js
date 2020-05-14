@@ -20,3 +20,37 @@
 */
 
 // YOUR CODE HERE
+
+let outputElement = document.querySelector("#output")
+let inputElement = document.querySelector("#input")
+let submitButton = document.querySelector("#submit")
+
+submitButton.addEventListener("click", function () {
+   let word = "superstitious"
+   let searchLetter = inputElement.value
+
+   let counter = 0
+
+   let letterCount = 0
+
+   while (counter < word.length) {
+      let currentLetter = word[counter]
+      if (currentLetter === searchLetter) {
+         letterCount += 1
+      }
+      counter += 1
+   }
+
+   if (letterCount > 0) {
+      outputElement.innerHTML = "The letter " + searchLetter + " exists " + letterCount + " times in this word!"
+   } else {
+      outputElement.innerHTML = "Nope, that letter doesn't exist in my word!"
+   }
+})
+
+
+
+
+
+
+

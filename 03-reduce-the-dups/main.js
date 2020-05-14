@@ -8,5 +8,20 @@
 
 */
 
-const redundantArray = [1, 1, 2, 3, 3, 4]
-// YOUR CODE HERE
+let outputElement = document.querySelector("#output")
+
+let redundantArray = [1, 1, 2, 3, 3, 4, 6, 6, 7, 7, 8, 9, 10, 10]
+
+let removedDuplicatesArray = []
+
+let counter = 0
+while (counter < redundantArray.length) {
+  let currentNumber = redundantArray[counter]
+  if (removedDuplicatesArray.includes(currentNumber) === false) {
+    removedDuplicatesArray.push(currentNumber)
+  }
+  counter += 1
+}
+
+outputElement.innerHTML += "Before:" + redundantArray + "<br>" + "After:" + removedDuplicatesArray
+
